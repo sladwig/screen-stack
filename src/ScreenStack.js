@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 const screenWidth = 300;
 const time = 285;
+
+// various screens
 function Abc() {
     const style = {
         background: 'red',
@@ -28,6 +30,7 @@ function Xyz() {
     return <div style={style}>Xyz</div>;
 }
 
+// some helper
 function getScreen(type) {
     return {
         abc: Abc,
@@ -44,6 +47,7 @@ function getHeight(type) {
 }
 
 export function ScreenStack() {
+    // could be a nice little hook useScreenStack, exposing push, pop, setReturnScreen, ...
     const [stack, setStack] = useState(['abc', 'def', 'xyz']);
     const [viewIndex, setIndex] = useState(stack.length - 1);
 
